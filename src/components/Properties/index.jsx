@@ -1,7 +1,7 @@
 import { Container } from "./style";
 
 const Properties = () => {
-  return <Container>Home</Container>;
+  return <Container>Properties</Container>;
 };
 
 export default Properties;
