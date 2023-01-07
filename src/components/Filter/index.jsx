@@ -46,7 +46,8 @@ const Filter = () => {
         placeholder={"Enter an address, neighborhood, city or ZIP code"}
       />
       <Dropdown
-        menu={{ items: menu }}
+        // menu={{ items: menu }}
+        overlay={menu}
         placement="bottomRight"
         arrow={{ pointAtCenter: true }}
       >
