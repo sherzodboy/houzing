@@ -1,4 +1,4 @@
-import { Input, Button } from "../Generic";
+import { Input } from "../Generic";
 import { Container } from "./style";
 
 const Home = () => {
