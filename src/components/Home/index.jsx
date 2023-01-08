@@ -1,10 +1,12 @@
 import Carousel from "../Carousel";
+import HouseCard from "../HouseCard";
 import { Container } from "./style";
 
 const Home = () => {
   return (
     <Container>
       <Carousel />
+      <HouseCard />
     </Container>
   );
 };
