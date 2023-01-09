@@ -46,3 +46,9 @@ body {
   line-height: 20px;
   color: #696969; 
 }
+
+.inline {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
