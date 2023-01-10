@@ -1,5 +1,6 @@
 import Carousel from "../Carousel";
 import HouseCard from "../HouseCard";
+import CategoryCard from "../CategoryCard";
 import { Container } from "./style";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <Container>
       <Carousel />
       <HouseCard />
+      <CategoryCard />
     </Container>
   );
 };
