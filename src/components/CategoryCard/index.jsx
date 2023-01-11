@@ -2,11 +2,11 @@ import { Blur, Container, Content, Img } from "./style";
 import noimg from "./../../assets/img/noimg.jpeg";
 import category from "./../../assets/img/category.png";
 
-const HouseCard = ({ data = {} }) => {
+const CategoryCard = ({ onClick, data = {} }) => {
   const { name } = data;
 
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Img src={category || noimg} />
       <Blur />
       <Content>{name || "Category name"}</Content>
@@ -14,4 +14,4 @@ const HouseCard = ({ data = {} }) => {
   );
 };
 
-export default HouseCard;
+export default CategoryCard;

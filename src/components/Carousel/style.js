@@ -44,7 +44,7 @@ const Content = styled.div`
   bottom: 0;
   display: flex;
   flex-direction: column;
-  color: #fff;
+  color: #fff; 
   align-items: center;
   justify-content: center;
 `;

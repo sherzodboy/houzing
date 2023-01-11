@@ -8,7 +8,7 @@ const { REACT_APP_BASE_URL: url } = process.env;
 const Properties = (props) => {
   const [data, setData] = useState([]);
   const { search } = useLocation();
-  
+
   useEffect(() => {
     fetch(`${url}/houses/list${search}`)
       .then((res) => res.json())
