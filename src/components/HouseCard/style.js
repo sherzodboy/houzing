@@ -7,13 +7,21 @@ import { ReactComponent as love } from "./../../assets/icons/love.svg";
 import { ReactComponent as resize } from "./../../assets/icons/resize.svg";
 
 const Container = styled.div`
+  border-radius: 3px;
+  // border: 0.7px solid silver;
   width: 100%;
-  max-width: 380px;
+  max-width: 350px;
   min-width: 330px;
-  height: 430px;
-  filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  margin: ${({ gap }) => {
+    return gap && `0 ${gap}px`;
+  }};
+  // height: 430px;
+  cursor: pointer;
+  :hover {
+    filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.03))
+      drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.03))
+      drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.03));
+  }
 `;
 
 const Img = styled.img`

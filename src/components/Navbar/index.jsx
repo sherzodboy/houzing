@@ -3,6 +3,7 @@ import { Container, Link, Logo, Main, Section, Wrapper } from "./style";
 import { navbar } from "./../../utils/navbar";
 import Button from "../Generic/Button";
 import Filter from "../Filter";
+import Footer from "./../Footer/index";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ const Home = () => {
       </Main>
       <Filter />
       <Outlet />
+      <Footer />
     </Container>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Content } from "./style";
-import CategoryCard from "../CategoryCard";
+import HouseCard from "./../HouseCard/index";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 
@@ -20,31 +20,31 @@ const settings = {
   appendDots: (dots) => <h1> {dots} </h1>,
 };
 
-export const GenCarousel = () => {
+const Recent = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${url}/categories/list`)
+    fetch(`${url}/houses/list`)
       .then((res) => res.json())
       .then((res) => {
         setData(res?.data || []);
       });
   }, []);
 
-  console.log(data);
   return (
     <Container>
       <Content>
-        <h1 className="title">Category</h1>
-        <div className="info">
+        <h1 className="title">Recent Properties for Rent</h1>
+        <h1 className="info">
           Lorem ipsum dolor sit amet consectetur adipisicing.
-        </div>
+        </h1>
       </Content>
       <Slider {...settings}>
         {data.map((value) => {
           return (
-            <CategoryCard
+            <HouseCard
+              gap={15}
               onClick={() => navigate(`/properties?category_id=${value?.id}`)}
               data={value}
             />
@@ -55,4 +55,4 @@ export const GenCarousel = () => {
   );
 };
 
-export default GenCarousel;
+export default Recent;
