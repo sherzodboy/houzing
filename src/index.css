@@ -19,6 +19,7 @@ body {
 
   /* padding */
   --padding: 0 130px;
+  --width: 1440px;
 }
 
 .title {
@@ -60,5 +61,5 @@ body {
 }
 
 .slick-dots-bottom {
-  width: fit-content;
+  width: inherit !important;
 }
