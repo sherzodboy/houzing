@@ -4,7 +4,7 @@ import HouseCard from "../HouseCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import useRequest from "../../hooks/useRequest";
 
-const { REACT_APP_BASE_URL: url } = process.env;
+// const { REACT_APP_BASE_URL: url } = process.env;
 
 const Properties = () => {
   const [data, setData] = useState([]);
@@ -13,14 +13,10 @@ const Properties = () => {
   const request = useRequest();
 
   useEffect(() => {
-    fetch(`${url}/houses/list${search}`)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res?.data || []);
-      });
-
-    request({ url: `/houses/list${search}` });
-    // eslint-disable-next-line
+    request({ url: `/houses/list${search}` }).then((res) =>
+      setData(res?.data || [])
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
   const onSelect = (id) => {

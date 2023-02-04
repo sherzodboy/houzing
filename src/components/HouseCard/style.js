@@ -61,11 +61,14 @@ Icons.Resize = styled(resize)``;
 Icons.Love = styled(love)`
   width: 27px;
   height: 27px;
-  padding: 5px;
-  background-color: #f6f8f9;
-  border-radius: 60px;
+  padding: 6px;
+  background: ${({ favorite }) => (favorite ? "red" : "#f6f8f9")};
+  border-radius: 50%;
   margin-left: 20px;
   cursor: pointer;
+  & path {
+    fill: ${({ favorite }) => favorite && "white"};
+  }
   :active {
     transform: scale(0.9);
   }

@@ -17,6 +17,7 @@ import {
 import { Checkbox } from "antd";
 import Yandex from "../Generic/Yandex";
 import Recent from "./../Recent/index";
+
 // const { REACT_APP_BASE_URL: url } = process.env;
 
 const HouseItem = () => {
@@ -25,9 +26,6 @@ const HouseItem = () => {
   // const request = useRequest();
 
   useEffect(() => {
-    // request({ url: `/houses/list/${params?.id}` }).then((res) =>
-    //   setData(res?.data || [])
-    // );
     fetch(`https://houzing-app.herokuapp.com/api/v1/houses/id/${params?.id}`)
       .then((res) => res.json())
       .then((res) => {

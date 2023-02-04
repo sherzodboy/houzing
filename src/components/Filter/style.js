@@ -37,7 +37,7 @@ const Section = styled.div`
   margin-bottom: 20px;
 `;
 
-const SelectAntd = styled(Select)`
+const SelectAnt = styled(Select)`
   min-width: 200px;
   min-width: 200px;
   .ant-select-selector {
@@ -49,4 +49,4 @@ const SelectAntd = styled(Select)`
   }
 `;
 
-export { Container, Icons, MenuWrapper, Section, SelectAntd };
+export { Container, Icons, MenuWrapper, Section, SelectAnt };

@@ -1,7 +1,7 @@
 import { Dropdown } from "antd";
 import { useState, useEffect, useRef } from "react";
 import { Input, Button } from "../Generic";
-import { Container, Icons, MenuWrapper, Section, SelectAntd } from "./style";
+import { Container, Icons, MenuWrapper, Section, SelectAnt } from "./style";
 import { uzeReplace } from "./../../hooks/useReplace";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSearch } from "./../../hooks/useSearch";
@@ -97,24 +97,24 @@ const Filter = () => {
           ref={roomsRef}
           placeholder={"Rooms"}
         />
-        <SelectAntd
+        <SelectAnt
           defaultValue={query.get("sort") || "Select Sort"}
           onChange={onChangeSort}
         >
-          <SelectAntd.Option value={""}>Select Sort</SelectAntd.Option>
-          <SelectAntd.Option value={"asc"}>O'suvchi</SelectAntd.Option>
-          <SelectAntd.Option value={"desc"}>Kamayuvchi</SelectAntd.Option>
-        </SelectAntd>
-        <SelectAntd value={value} onChange={onChangeCategory}>
-          <SelectAntd.Option value={""}>Select Category</SelectAntd.Option>
+          <SelectAnt.Option value={""}>Select Sort</SelectAnt.Option>
+          <SelectAnt.Option value={"asc"}>O'suvchi</SelectAnt.Option>
+          <SelectAnt.Option value={"desc"}>Kamayuvchi</SelectAnt.Option>
+        </SelectAnt>
+        <SelectAnt value={value} onChange={onChangeCategory}>
+          <SelectAnt.Option value={""}>Select Category</SelectAnt.Option>
           {data.map((value) => {
             return (
-              <SelectAntd.Option key={value?.id} value={value?.id}>
+              <SelectAnt.Option key={value?.id} value={value?.id}>
                 {value?.name}
-              </SelectAntd.Option>
+              </SelectAnt.Option>
             );
           })}
-        </SelectAntd>
+        </SelectAnt>
       </Section>
       <h1 className="subTitle">Price</h1>
       <Section>

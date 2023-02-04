@@ -5,31 +5,32 @@ const getType = ({ type }) => {
     case "dark":
       return {
         background: "transparent",
-        border: "1px solid #fff",
-        color: "#fff",
+        border: "1px solid #FFFFFF",
+        color: "white",
       };
     case "light":
       return {
-        background: "#fff",
-        border: "1px solid #e6e9ec",
-        color: "#0d263b",
+        background: "#FFFFFF",
+        border: "1px solid #E6E9EC",
+        color: "#0D263B",
       };
     case "primary":
       return {
         background: "#0061DF",
         border: "none",
-        color: "#fff",
+        color: "white",
       };
+
     default:
       return {
         background: "#0061DF",
         border: "none",
-        color: "#fff",
+        color: "white",
       };
   }
 };
 
-const getWith = ({ width }) => {
+const getWidth = ({ width }) => {
   if (!width) return "130px";
   else if (`${width}`.includes("%")) return "100%";
   else return `${width}px`;
@@ -43,12 +44,13 @@ const Container = styled.button`
   min-width: 120px;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
-  width: ${getWith};
-  cursor: pointer;
+  width: ${getWidth};
+  opacity: ${({ disabled }) => (disabled ? 0.7 : 1)};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  ${getType}
   :active {
     opacity: 0.7;
   }
-  ${getType}
 `;
 
 export { Container };
