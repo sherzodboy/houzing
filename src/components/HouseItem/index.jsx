@@ -4,12 +4,16 @@ import { useParams } from "react-router-dom";
 // import useRequest from "../../hooks/useRequest";
 import { Input, Button } from "./../Generic/index";
 import nouser from "./../../assets/img/nouser.jpeg";
+import noimg from "./../../assets/img/noimg.jpeg";
 import {
+  Blur,
   Container,
   Content,
   Description,
   Details,
   Icons,
+  ImageContainer,
+  ImgContainer,
   Section,
   User,
   Wrapper,
@@ -36,6 +40,33 @@ const HouseItem = () => {
 
   return (
     <React.Fragment>
+      <ImageContainer>
+        <ImageContainer.Main
+          src={(data?.attachments && data?.attachments[0]?.imgPath) || noimg}
+          alt="test"
+        />
+        <ImgContainer>
+          {data?.attachments &&
+            data?.attachments?.slice(1, 5).map((value, index) => {
+              return data?.attachments?.length > 5 && index === 3 ? (
+                <Blur.Container>
+                  <ImageContainer.Subimg
+                    key={value.id}
+                    src={value?.imgPath}
+                    alt="test"
+                  />
+                  <Blur>+{data?.attachments?.length - 5}</Blur>
+                </Blur.Container>
+              ) : (
+                <ImageContainer.Subimg
+                  key={value.id}
+                  src={value?.imgPath}
+                  alt="test"
+                />
+              );
+            })}
+        </ImgContainer>
+      </ImageContainer>
       <Wrapper>
         <Container flex={3}>
           <Section>

@@ -62,13 +62,11 @@ export const AddNewHouse = () => {
   });
 
   const addImg = () => {
-    if (!(imgs.length >= 4) && img) {
-      setImgs([
-        ...imgs,
-        { imgPath: img, id: `${img.length * Math.random()}${img}$` },
-      ]);
-      setImg("");
-    }
+    setImgs([
+      ...imgs,
+      { imgPath: img, id: `${img.length * Math.random()}${img}$` },
+    ]);
+    setImg("");
   };
 
   return (
@@ -196,11 +194,7 @@ export const AddNewHouse = () => {
               onChange={({ target: { value } }) => setImg(value)}
               placeholder="Add img url"
             />
-            <Button
-              type={"button"}
-              onClick={addImg}
-              disabled={imgs.length >= 4}
-            >
+            <Button type={"button"} onClick={addImg}>
               Add Image URL
             </Button>
           </Section>
